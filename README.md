@@ -62,6 +62,7 @@ then the model learns to predict:
 `x101`
 
 So the learning task is next-step forecasting from a fixed-length historical window.
+![Model Output](output.png)
 
 ### Model Architecture
 The model is based on a Transformer encoder rather than an LSTM.
@@ -141,5 +142,5 @@ Main components:
 
 This project is a Transformer-based time-series forecasting notebook that generates synthetic stock-price data, transforms it into sliding-window training samples, builds a custom multi-head self-attention encoder in TensorFlow/Keras, trains the model to predict the next value in the sequence, and visualizes predictions against the original series.
 
-![Model Output](output.png)
+
 ```
