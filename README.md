@@ -135,8 +135,8 @@ Main components:
 
 ## Files
 
-- `advancedTransformers.ipynb` — main notebook
-- `stock_prices.csv` — generated synthetic dataset
+- `advancedTransformers.ipynb`, main notebook
+- `stock_prices.csv`, generated synthetic dataset
 
 ## Summary
 
