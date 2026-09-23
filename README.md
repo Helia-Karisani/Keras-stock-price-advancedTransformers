@@ -1,4 +1,5 @@
-# Advanced Transformer for Stock-Price Time-Series Forecasting
+
+# Advanced Transformer for stock-price Time-Series Forecasting
 
 ## Overview
 
@@ -26,14 +27,14 @@ The notebook does not use real market data. It first generates a synthetic stock
    - dropout
 10. Stacks multiple Transformer blocks into a `TransformerEncoder`.
 11. Builds a prediction model with:
-    - input layer
-    - dense projection to embedding dimension
-    - Transformer encoder
-    - flatten layer
-    - final dense output layer
+   - input layer
+   - dense projection to embedding dimension
+   - Transformer encoder
+   - flatten layer
+   - final dense output layer
 12. Compiles the model using:
-    - Adam optimizer
-    - mean squared error loss
+   - Adam optimizer
+   - mean squared error loss
 13. Trains the model for 20 epochs with batch size 32.
 14. Generates predictions on the prepared sequence data.
 15. Converts predictions back to the original price scale.
@@ -61,7 +62,6 @@ then the model learns to predict:
 `x101`
 
 So the learning task is next-step forecasting from a fixed-length historical window.
-
 ![Model Output](output.png)
 
 ### Model Architecture
@@ -110,6 +110,21 @@ Main components:
 - `tf.keras.layers.Dropout`
 - `tf.keras.layers.LayerNormalization`
 
+## Why This Project Is Technically Interesting
+
+- It implements **custom Transformer layers manually** instead of only using high-level built-in layers.
+- It applies **self-attention to time-series forecasting**.
+- It shows how to turn a 1D sequence into a supervised learning dataset using a sliding window.
+- It demonstrates an end-to-end deep learning pipeline:
+  - synthetic data creation
+  - preprocessing
+  - sequence construction
+  - model definition
+  - training
+  - inverse scaling
+  - visualization
+- It uses a **Transformer encoder for regression**, not classification or NLP.
+
 ## Limitations
 
 - The dataset is synthetic, so results do not reflect real stock-market behavior.
@@ -120,5 +135,12 @@ Main components:
 
 ## Files
 
-- `advancedTransformers.ipynb`: main notebook
-- `stock_prices.csv`: generated synthetic dataset
+- `advancedTransformers.ipynb` — main notebook
+- `stock_prices.csv` — generated synthetic dataset
+
+## Summary
+
+This project is a Transformer-based time-series forecasting notebook that generates synthetic stock-price data, transforms it into sliding-window training samples, builds a custom multi-head self-attention encoder in TensorFlow/Keras, trains the model to predict the next value in the sequence, and visualizes predictions against the original series.
+
+
+```
