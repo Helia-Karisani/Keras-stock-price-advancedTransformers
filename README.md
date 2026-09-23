@@ -143,4 +143,3 @@ Main components:
 This project is a Transformer-based time-series forecasting notebook that generates synthetic stock-price data, transforms it into sliding-window training samples, builds a custom multi-head self-attention encoder in TensorFlow/Keras, trains the model to predict the next value in the sequence, and visualizes predictions against the original series.
 
 
-```
